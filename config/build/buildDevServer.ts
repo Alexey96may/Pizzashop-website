@@ -7,5 +7,11 @@ export function buildDevServer(options: BuildOptions): Server.Configuration {
         open: true,
         historyApiFallback: true,
         hot: true,
+        watchFiles: {
+            paths: ["src/**/*", "public/**/*", "!src/assets/img/**/*"],
+            options: {
+                usePolling: false,
+            },
+        },
     };
 }
