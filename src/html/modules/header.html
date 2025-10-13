@@ -1,1 +1,38 @@
-<header class="header">Header</header>
+<header class="header" id="header" aria-label="Header section">
+    <div class="container">
+        <div class="logo" aria-label="Logo section">
+            <a href="#" aria-label="To home section">pizzashop</a>
+        </div>
+
+        <nav class="nav" id="nav" aria-label="Navigation menu">
+            <ul class="nav-list" aria-label="Navigation list">
+                <li class="nav-item">
+                    <a href="#" aria-label="To home section">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" aria-label="To menu section">Menu</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" aria-label="To events section">Events</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" aria-label="To about section">About us</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="header__buttons" aria-label="Buttons section">
+            <a class="button button--login" href="#" aria-label="To log in"
+                >Log in</a
+            >
+            <a class="button button--cart" href="#" aria-label="To cart">
+                <svg>
+                    <use href="./assets/sprites/spritemap.svg#cart"></use>
+                </svg>
+            </a>
+            <button class="burger">
+                <span class="burger__line"></span>
+            </button>
+        </div>
+    </div>
+</header>
