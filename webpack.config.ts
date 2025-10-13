@@ -10,6 +10,7 @@ import {
 interface EnvVariables {
     mode?: BuildMode;
     analyzer?: boolean;
+    img?: boolean;
     port?: number;
     platform?: BuildPlatform;
 }

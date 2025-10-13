@@ -31,21 +31,6 @@ export function buildPlugins({
                 filename: "/assets/sprites/spritemap.svg",
             },
         }),
-        new ImageminWebpWebpackPlugin(),
-        new ImageminAvifWebpackPlugin({
-            config: [
-                {
-                    test: /\.(jpe?g|png)/,
-                    options: {
-                        quality: 75,
-                    },
-                },
-            ],
-            overrideExtension: true,
-            detailedLogs: true,
-            silent: false,
-            strict: false,
-        }),
     ];
 
     if (pages.length > 0) {
@@ -64,6 +49,26 @@ export function buildPlugins({
                 })
             );
         });
+    }
+
+    if (!isDev) {
+        plugins.push(new new ImageminWebpWebpackPlugin()());
+        plugins.push(
+            new new ImageminAvifWebpackPlugin({
+                config: [
+                    {
+                        test: /\.(jpe?g|png)/,
+                        options: {
+                            quality: 75,
+                        },
+                    },
+                ],
+                overrideExtension: true,
+                detailedLogs: true,
+                silent: false,
+                strict: false,
+            })()
+        );
     }
 
     if (isDev) {
