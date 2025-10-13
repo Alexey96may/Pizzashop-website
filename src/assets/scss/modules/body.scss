@@ -8,6 +8,8 @@ html {
 body {
     background-color: vars.$darkBgColor;
     font-family: vars.$mainFontFamily;
+    font-weight: 400;
+    line-height: 1.1;
     color: vars.$mainTextColor;
 }
 
@@ -17,6 +19,7 @@ body {
 
 .container {
     max-width: vars.$containerWidth;
+    padding: 0 vars.$containerPadding;
     margin: 0 auto;
 }
 

@@ -4,6 +4,20 @@
     aspect-ratio: $aRatio;
 }
 
+@mixin textGrad($dir, $colors...) {
+    background: linear-gradient($dir, $colors...);
+    color: transparent;
+    background-clip: text;
+}
+
+@mixin flex($jCont: flex-start, $aItems: stretch, $fDir: row, $fWrap: nowrap) {
+    display: flex;
+    justify-content: $jCont;
+    align-items: $aItems;
+    flex-direction: $fDir;
+    flex-wrap: $fWrap;
+}
+
 @mixin position(
     $pos: static,
     $inset: 0,

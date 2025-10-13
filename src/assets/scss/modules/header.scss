@@ -1,2 +1,242 @@
 @use "../utils/vars";
 @use "../utils/mixins";
+
+.header {
+    padding: 48px 0;
+
+    &__container {
+        @include mixins.flex(space-between, center);
+        column-gap: vars.$minGap;
+    }
+
+    .button__svg {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+.logo {
+    @include mixins.textGrad(72deg, #ffa228 0%, #ff6432 100%);
+    font-size: 34px;
+    font-weight: 800;
+
+    a:focus-visible {
+        outline: none;
+    }
+
+    @media (max-width: vars.$mediaMobile) {
+        font-size: 24px;
+    }
+}
+
+.nav {
+    transition: all vars.$basicTransTime ease-in-out;
+
+    @media (max-width: vars.$mediaTablet) {
+        visibility: hidden;
+        opacity: 0;
+        width: 100vw;
+        height: 100vh;
+        padding: 140px 0 60px;
+        overflow-y: auto;
+        @include mixins.position(absolute, -1, top, left, 0, 0);
+        background-color: rgba(26, 11, 6, 0.95);
+    }
+
+    &__list {
+        @include mixins.flex(space-between, center);
+        column-gap: min(80px, 7vw);
+
+        @media (max-width: vars.$mediaTablet) {
+            flex-direction: column;
+            row-gap: min(80px, 7vw);
+        }
+    }
+
+    .nav__item--reg {
+        display: none;
+
+        @media (max-width: vars.$mediaSmallTablet) {
+            display: block;
+        }
+    }
+
+    &__link {
+        position: relative;
+        padding: 13px 0;
+        font-size: 18px;
+        white-space: nowrap;
+        transition: all vars.$basicTransTime ease-in-out;
+        @include mixins.textGrad(
+            72deg,
+            vars.$mainTextColor 60%,
+            #ffa228 40%,
+            #ff6432 100%
+        );
+        background-size: 300% 300%;
+        background-position: 0% 50%;
+
+        &::after {
+            content: "";
+            @include mixins.position(absolute, -1, bottom, left, 0, 50%);
+            transition: all vars.$basicTransTime ease-in-out;
+            width: 6px;
+            height: 6px;
+            translate: -50%;
+            border-radius: 50%;
+            opacity: 0;
+            visibility: hidden;
+            background: linear-gradient(72deg, #ffa228 0%, #ff6432 100%);
+        }
+
+        &:hover,
+        &:focus-visible {
+            background-position: 100% 50%;
+            outline: none;
+
+            @media (hover: none) {
+                background-position: 0% 50%;
+            }
+
+            &::after {
+                opacity: 1;
+                visibility: visible;
+
+                @media (hover: none) {
+                    opacity: 0;
+                    visibility: hidden;
+                }
+            }
+        }
+    }
+
+    &__link--active {
+        @include mixins.textGrad(72deg, #ffa228 0%, #ff6432 100%);
+        background-size: 100% 100%;
+        background-position: 0% 50%;
+
+        &::after {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        &:hover,
+        &:focus-visible {
+            background-position: 0% 50%;
+            outline: none;
+
+            &::after {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+}
+
+.nav--appear {
+    @media (max-width: vars.$mediaTablet) {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+.header__buttons {
+    @include mixins.flex(space-between, center);
+    column-gap: 24px;
+}
+
+.button {
+    display: block;
+    background: linear-gradient(
+        72deg,
+        #ffa228 0%,
+        #ff6432 50%,
+        #ff6432 60%,
+        #ffa228 100%
+    );
+    background-size: 200% 100%;
+    border-radius: 700px;
+    font-size: 18px;
+    color: vars.$titleTextColor;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: all vars.$basicTransTime ease-out;
+
+    &:hover,
+    &:focus-visible {
+        outline: none;
+        background-position: 100% 0%;
+        color: vars.$paleTextColor;
+
+        svg {
+            stroke: vars.$paleTextColor;
+            @media (hover: none) {
+                stroke: vars.$lightBgColor;
+            }
+        }
+
+        @media (hover: none) {
+            background-position: 0% 0%;
+            color: vars.$titleTextColor;
+        }
+    }
+}
+
+.button--login {
+    padding: 10px 56px;
+
+    @media (max-width: vars.$mediaSmallTablet) {
+        display: none;
+    }
+}
+
+.button--cart {
+    padding: 5px 8px;
+    width: 44px;
+    height: 44px;
+}
+
+.button__svg {
+    stroke: vars.$lightBgColor;
+    display: block;
+    transition: all vars.$basicTransTime ease-out;
+}
+
+.burger {
+    display: none;
+    position: relative;
+    background: none;
+    padding: 0;
+    border: none;
+    width: 28px;
+    height: 21px;
+
+    @media (max-width: vars.$mediaTablet) {
+        display: block;
+    }
+}
+
+.burger__line {
+    display: block;
+    width: 100%;
+    border-radius: 10px;
+    height: 2px;
+    background: linear-gradient(72deg, #ffa228 0%, #ff6432 100%);
+
+    &::before,
+    &::after {
+        content: "";
+        background: linear-gradient(72deg, #ffa228 0%, #ff6432 100%);
+        border-radius: 10px;
+        width: 100%;
+        height: 2px;
+    }
+
+    &::before {
+        @include mixins.position(absolute, -1, top, left, 0, 0);
+    }
+
+    &::after {
+        @include mixins.position(absolute, -1, bottom, left, 0, 0);
+    }
+}

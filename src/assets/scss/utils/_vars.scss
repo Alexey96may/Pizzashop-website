@@ -5,6 +5,7 @@ $paleTextColor: #515151;
 $hoverLinkColor: #ff5924;
 
 // Background Colors
+$lightBgColor: #ffffff;
 $darkBgColor: #210a01;
 
 // Gradient
@@ -18,7 +19,7 @@ $basicFontSize: 20px;
 
 //  Container
 $containerPadding: 24px;
-$containerWidth: 1254px;
+$containerWidth: calc(1254px + ($containerPadding * 2));
 
 //  Transitions
 $basicTransTime: 0.3s;
@@ -26,6 +27,7 @@ $basicTransTime: 0.3s;
 // Paddings & Margins
 $mainPadding: 24px;
 $mainMargin: 24px;
+$minGap: 24px;
 
 // Medias
 $mediaPC: 1400px;

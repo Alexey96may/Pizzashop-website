@@ -1,22 +1,38 @@
 <header class="header" id="header" aria-label="Header section">
-    <div class="container">
+    <div class="container header__container">
         <div class="logo" aria-label="Logo section">
             <a href="#" aria-label="To home section">pizzashop</a>
         </div>
 
         <nav class="nav" id="nav" aria-label="Navigation menu">
-            <ul class="nav-list" aria-label="Navigation list">
-                <li class="nav-item">
-                    <a href="#" aria-label="To home section">Home</a>
+            <ul class="nav__list" aria-label="Navigation list">
+                <li class="nav__item">
+                    <a
+                        class="nav__link nav__link--active"
+                        href="#"
+                        aria-label="To home section"
+                        >Home</a
+                    >
                 </li>
-                <li class="nav-item">
-                    <a href="#" aria-label="To menu section">Menu</a>
+                <li class="nav__item">
+                    <a class="nav__link" href="#" aria-label="To menu section"
+                        >Menu</a
+                    >
                 </li>
-                <li class="nav-item">
-                    <a href="#" aria-label="To events section">Events</a>
+                <li class="nav__item">
+                    <a class="nav__link" href="#" aria-label="To events section"
+                        >Events</a
+                    >
                 </li>
-                <li class="nav-item">
-                    <a href="#" aria-label="To about section">About us</a>
+                <li class="nav__item">
+                    <a class="nav__link" href="#" aria-label="To about section"
+                        >About us</a
+                    >
+                </li>
+                <li class="nav__item nav__item--reg">
+                    <a class="nav__link" href="#" aria-label="To log in"
+                        >Log in</a
+                    >
                 </li>
             </ul>
         </nav>
@@ -26,11 +42,13 @@
                 >Log in</a
             >
             <a class="button button--cart" href="#" aria-label="To cart">
-                <svg>
-                    <use href="./assets/sprites/spritemap.svg#cart"></use>
+                <svg class="button__svg">
+                    <use
+                        href="./assets/sprites/spritemap.svg#sprite-cart"
+                    ></use>
                 </svg>
             </a>
-            <button class="burger">
+            <button class="burger" id="burger">
                 <span class="burger__line"></span>
             </button>
         </div>
