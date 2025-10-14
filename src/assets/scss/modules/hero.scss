@@ -1,2 +1,353 @@
 @use "../utils/vars";
 @use "../utils/mixins";
+
+.hero {
+    padding-top: 13px;
+
+    @media (max-width: vars.$mediaMobile) {
+        padding-top: 26px;
+    }
+}
+
+.hero__container {
+    @include mixins.flex(space-between, center, row-reverse);
+    gap: vars.$minGap;
+
+    @media (max-width: vars.$mediaSmallTablet) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 76px;
+    }
+
+    @media (max-width: vars.$mediaSmallMobile) {
+        gap: 62px;
+    }
+}
+
+.hero__images-wrapper {
+    position: relative;
+
+    @media (max-width: vars.$mediaSmallTablet) {
+        align-self: center;
+    }
+
+    @media (max-width: vars.$mediaSmallMobile) {
+        padding: vars.$mainPadding;
+    }
+}
+
+.hero__img-wrapper {
+    display: block;
+    max-width: 456px;
+    border-radius: 46px;
+    overflow: hidden;
+    box-shadow: 0px 4px 33px rgba(255, 78, 21, 0.3);
+
+    @media (max-width: vars.$mediaSmallTablet) {
+        max-width: 365px;
+        border-radius: 32px;
+    }
+
+    @media (max-width: vars.$mediaMobile) {
+        max-width: 243px;
+        border-radius: 24px;
+    }
+
+    @media (max-width: vars.$mediaSmallMobile) {
+        max-width: 100%;
+        border-radius: 20px;
+    }
+}
+
+.hero__img-pizza {
+    @include mixins.position(absolute, -1, top, right, 10px, -125px);
+    max-width: 251px;
+
+    @media (max-width: vars.$mediaTablet) {
+        top: -80px;
+        right: -65px;
+        max-width: 180px;
+    }
+
+    @media (max-width: vars.$mediaSmallTablet) {
+        top: -65px;
+        right: -75px;
+        max-width: 160px;
+    }
+
+    @media (max-width: vars.$mediaMobile) {
+        top: -40px;
+        right: -50px;
+        max-width: 100px;
+    }
+
+    @media (max-width: vars.$mediaSmallMobile) {
+        top: -15px;
+        right: -15px;
+        max-width: 80px;
+    }
+
+    img {
+        object-fit: contain;
+        width: 100%;
+        aspect-ratio: 1;
+        filter: drop-shadow(0px 11px 17px rgba(17, 8, 0, 0.5));
+    }
+}
+
+.hero__img-fries {
+    @include mixins.position(absolute, -1, bottom, left, -90px, -120px);
+    max-width: 212px;
+    z-index: 1;
+
+    @media (max-width: vars.$mediaTablet) {
+        bottom: -70px;
+        left: -90px;
+        max-width: 180px;
+    }
+
+    @media (max-width: vars.$mediaSmallTablet) {
+        bottom: -65px;
+        max-width: 160px;
+    }
+
+    @media (max-width: vars.$mediaMobile) {
+        bottom: -45px;
+        left: -60px;
+        max-width: 110px;
+    }
+
+    @media (max-width: vars.$mediaSmallMobile) {
+        bottom: -15px;
+        left: -25px;
+        max-width: 90px;
+    }
+
+    img {
+        object-fit: contain;
+        width: 100%;
+        aspect-ratio: 1;
+        filter: drop-shadow(-2px -15px 17px rgba(17, 8, 0, 0.5));
+    }
+}
+
+.hero__img {
+    object-fit: cover;
+    width: 100%;
+    aspect-ratio: 2 / 3;
+}
+
+.hero__wrapper {
+    @include mixins.flex(space-between, flex-start, column);
+    gap: vars.$minGap;
+
+    @media (max-width: vars.$mediaSmallTablet) {
+        gap: 52px;
+    }
+
+    @media (max-width: vars.$mediaMobile) {
+        gap: 32px;
+    }
+}
+
+.hero__title {
+    font-size: 70px;
+    color: vars.$titleTextColor;
+    font-weight: 800;
+    max-width: 540px;
+    margin-bottom: 30px;
+
+    @media (max-width: vars.$mediaSmallTablet) {
+        font-size: 62px;
+        max-width: 90%;
+    }
+
+    @media (max-width: vars.$mediaMobile) {
+        font-size: 48px;
+        max-width: 100%;
+        margin-bottom: 24px;
+    }
+
+    @media (max-width: vars.$mediaSmallMobile) {
+        font-size: 36px;
+    }
+}
+
+.hero__descr {
+    max-width: 410px;
+    line-height: 1.5;
+
+    @media (max-width: vars.$mediaSmallTablet) {
+        font-size: 18px;
+        max-width: 80%;
+    }
+
+    @media (max-width: vars.$mediaMobile) {
+        font-size: 14px;
+        max-width: 85%;
+    }
+
+    @media (max-width: vars.$mediaSmallMobile) {
+        max-width: 100%;
+    }
+}
+
+.text-white {
+    color: vars.$titleTextColor;
+}
+
+.hero__video-wrapper {
+    @media (max-width: vars.$mediaSmallTablet) {
+        order: 1;
+    }
+}
+
+.hero__video-descr {
+    margin-bottom: 12px;
+    max-width: 250px;
+    line-height: 1.36;
+
+    @media (max-width: vars.$mediaSmallTablet) {
+        font-size: 18px;
+        max-width: 80%;
+    }
+
+    @media (max-width: vars.$mediaMobile) {
+        font-size: 14px;
+        max-width: 100%;
+        margin-bottom: 8px;
+    }
+}
+
+.hero__video--prev {
+    max-width: 272px;
+    overflow: hidden;
+    border-radius: 23px;
+    position: relative;
+    box-shadow: 0px 4px 29px rgba(255, 78, 21, 0.1);
+
+    @media (max-width: vars.$mediaSmallTablet) {
+        max-width: 272px;
+        border-radius: 18px;
+    }
+
+    @media (max-width: vars.$mediaMobile) {
+        max-width: 194px;
+        border-radius: 15px;
+    }
+
+    @media (max-width: vars.$mediaSmallMobile) {
+        max-width: 100%;
+        border-radius: 10px;
+    }
+}
+
+.hero__jpg {
+    object-fit: cover;
+    width: 100%;
+    aspect-ratio: 17/12;
+}
+
+.hero__play {
+    @include mixins.position(absolute, -1, top, left, 50%, 50%);
+    translate: -50% -50%;
+    width: 55%;
+    aspect-ratio: 1;
+}
+
+.hero__buttons {
+    position: relative;
+    margin-top: 34px;
+    white-space: nowrap;
+
+    &::after {
+        content: "";
+        @include mixins.position(absolute, -1, bottom, right, -150px, -240px);
+        background: url("../assets/img/hero-bigArrow.png") 0% 0% / 100% 100%
+            no-repeat;
+        width: 190px;
+        aspect-ratio: 1;
+
+        @media (max-width: vars.$mediaTablet) {
+            display: none;
+        }
+    }
+
+    @media (max-width: vars.$mediaSmallTablet) {
+        font-size: 18px;
+        margin-top: 0;
+    }
+
+    @media (max-width: vars.$mediaMobile) {
+        font-size: 16px;
+    }
+}
+
+.hero__button {
+    display: inline-block;
+    position: relative;
+    border: none;
+    font-size: 22.5px;
+    color: vars.$titleTextColor;
+    font-weight: 500;
+    line-height: 1.25;
+    padding: 17px 72px;
+    z-index: 1;
+
+    @media (max-width: vars.$mediaSmallTablet) {
+        font-size: 18px;
+        padding: 15px 54px;
+    }
+
+    @media (max-width: vars.$mediaMobile) {
+        padding: 12px 40px;
+        font-size: 16px;
+    }
+
+    @media (max-width: vars.$mediaSmallMobile) {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+}
+
+.hero__button--dark {
+    padding: 17px 35px 17px 91px;
+    margin-left: -72px;
+    z-index: 0;
+
+    @media (max-width: vars.$mediaSmallTablet) {
+        margin-left: -72px;
+        padding: 15px 35px 15px 91px;
+    }
+
+    @media (max-width: vars.$mediaMobile) {
+        margin-left: -48px;
+        padding: 12px 25px 12px 60px;
+    }
+
+    @media (max-width: vars.$mediaSmallMobile) {
+        margin-left: -42px;
+        padding: 12px 25px 12px 50px;
+    }
+
+    .hero__button-border {
+        @include mixins.position(absolute, 0);
+        border: 2px solid transparent;
+        z-index: auto;
+        border-radius: 700px;
+        background: linear-gradient(
+                to right,
+                vars.$darkBgColor,
+                vars.$darkBgColor
+            ),
+            linear-gradient(72deg, #ff6432 0%, #ffa228 100%);
+        background-clip: padding-box, border-box;
+        background-origin: padding-box, border-box;
+    }
+
+    .hero__button-text {
+        position: relative;
+        @include mixins.textGrad(72deg, #ffa228 0%, #ff6432 100%);
+        z-index: 1;
+    }
+}

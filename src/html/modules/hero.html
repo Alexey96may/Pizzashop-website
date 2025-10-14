@@ -1,9 +1,9 @@
 <section class="hero" id="hero" aria-label="Hero section">
     <div class="container hero__container">
-        <div class="hero__img-wrapper" aria-label="Pizza image">
-            <picture>
-                <source srcset="./assets/img/hero-img.avif" />
-                <source srcset="./assets/img/hero-img.webp" />
+        <div class="hero__images-wrapper" aria-label="Pizza image">
+            <picture class="hero__img-wrapper">
+                <!-- <source srcset="./assets/img/hero-img.avif" />
+                <source srcset="./assets/img/hero-img.webp" /> -->
                 <img
                     class="hero__img"
                     src="./assets/img/hero-img.jpg"
@@ -11,22 +11,56 @@
                     alt="Pizza image"
                 />
             </picture>
+            <picture class="hero__img-pizza">
+                <!-- <source srcset="./assets/img/pizza1.avif" />
+                <source srcset="./assets/img/pizza1.webp" /> -->
+                <img
+                    src="./assets/img/pizza1.png"
+                    loading="lazy"
+                    alt="Pizza image"
+                />
+            </picture>
+            <picture class="hero__img-fries">
+                <!-- <source srcset="./assets/img/fries1.avif" />
+                <source srcset="./assets/img/fries1.webp" /> -->
+                <img
+                    src="./assets/img/fries1.png"
+                    loading="lazy"
+                    alt="Pizza image"
+                />
+            </picture>
         </div>
+
         <div class="hero__wrapper" aria-label="Main information">
             <div class="hero__info" aria-label="Text information">
-                <h1 class="hero__title"></h1>
-                <p class="hero__descr"></p>
+                <h1 class="hero__title">The Fastest Pizza - Delivery</h1>
+                <p class="hero__descr">
+                    We will deliver juicy pizza for your family in 30 minutes,
+                    if the courier is late -
+                    <span class="text-white">pizza is free!</span>
+                </p>
             </div>
 
             <div class="hero__video-wrapper" aria-label="Video information">
-                <p class="hero__video-descr"></p>
+                <p class="hero__video-descr">Cooking process:</p>
                 <div class="hero__video--prev">
                     <picture>
-                        <source srcset="./assets/img/hero-videoPrev.avif" />
-                        <source srcset="./assets/img/hero-videoPrev.webp" />
+                        <!-- <source srcset="./assets/img/hero-videoPrev.avif" />
+                        <source srcset="./assets/img/hero-videoPrev.webp" /> -->
                         <img
                             class="hero__jpg"
                             src="./assets/img/hero-videoPrev.jpg"
+                            loading="lazy"
+                            alt="Pizza image"
+                        />
+                    </picture>
+
+                    <picture>
+                        <!-- <source srcset="./assets/img/play.avif" />
+                        <source srcset="./assets/img/play.webp" /> -->
+                        <img
+                            class="hero__play"
+                            src="./assets/img/play.png"
                             loading="lazy"
                             alt="Pizza image"
                         />
@@ -35,14 +69,16 @@
             </div>
 
             <div class="hero__buttons" aria-label="Buttons">
-                <button
-                    class="button hero__button"
-                    aria-label="Press to order"
-                ></button>
+                <button class="button hero__button" aria-label="Press to order">
+                    To order
+                </button>
                 <button
                     class="button hero__button hero__button--dark"
                     aria-label="Press to Pizza-Menu"
-                ></button>
+                >
+                    <span class="hero__button-border"></span>
+                    <span class="hero__button-text">Pizza-Menu</span>
+                </button>
             </div>
         </div>
     </div>
