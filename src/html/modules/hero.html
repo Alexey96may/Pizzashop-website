@@ -1,0 +1,49 @@
+<section class="hero" id="hero" aria-label="Hero section">
+    <div class="container hero__container">
+        <div class="hero__img-wrapper" aria-label="Pizza image">
+            <picture>
+                <source srcset="./assets/img/hero-img.avif" />
+                <source srcset="./assets/img/hero-img.webp" />
+                <img
+                    class="hero__img"
+                    src="./assets/img/hero-img.jpg"
+                    loading="lazy"
+                    alt="Pizza image"
+                />
+            </picture>
+        </div>
+        <div class="hero__wrapper" aria-label="Main information">
+            <div class="hero__info" aria-label="Text information">
+                <h1 class="hero__title"></h1>
+                <p class="hero__descr"></p>
+            </div>
+
+            <div class="hero__video-wrapper" aria-label="Video information">
+                <p class="hero__video-descr"></p>
+                <div class="hero__video--prev">
+                    <picture>
+                        <source srcset="./assets/img/hero-videoPrev.avif" />
+                        <source srcset="./assets/img/hero-videoPrev.webp" />
+                        <img
+                            class="hero__jpg"
+                            src="./assets/img/hero-videoPrev.jpg"
+                            loading="lazy"
+                            alt="Pizza image"
+                        />
+                    </picture>
+                </div>
+            </div>
+
+            <div class="hero__buttons" aria-label="Buttons">
+                <button
+                    class="button hero__button"
+                    aria-label="Press to order"
+                ></button>
+                <button
+                    class="button hero__button hero__button--dark"
+                    aria-label="Press to Pizza-Menu"
+                ></button>
+            </div>
+        </div>
+    </div>
+</section>

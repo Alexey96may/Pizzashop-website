@@ -169,9 +169,10 @@
         color: vars.$paleTextColor;
 
         svg {
-            stroke: vars.$paleTextColor;
+            fill: vars.$paleTextColor;
+
             @media (hover: none) {
-                stroke: vars.$lightBgColor;
+                fill: vars.$lightBgColor;
             }
         }
 
@@ -197,7 +198,7 @@
 }
 
 .button__svg {
-    stroke: vars.$lightBgColor;
+    fill: vars.$lightBgColor;
     display: block;
     transition: all vars.$basicTransTime ease-out;
 }
