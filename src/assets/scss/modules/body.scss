@@ -7,6 +7,13 @@ html {
 
 body {
     background-color: vars.$darkBgColor;
+    background: linear-gradient(
+        225deg,
+        #1e0c00 0%,
+        #1f0700 31%,
+        #170a00 69%,
+        #1e0d00 100%
+    );
     font-family: vars.$mainFontFamily;
     font-weight: 400;
     line-height: 1.1;

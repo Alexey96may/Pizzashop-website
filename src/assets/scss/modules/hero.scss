@@ -12,6 +12,14 @@
 .hero__container {
     @include mixins.flex(space-between, center, row-reverse);
     gap: vars.$minGap;
+    position: relative;
+    background: url("../assets/img/bg-pizza.png") 15% top / 518px 230px
+            no-repeat,
+        url("../assets/img/bg-pizza.png") 75% bottom / 518px 230px no-repeat;
+
+    @media (max-width: vars.$mediaTablet) {
+        background: none;
+    }
 
     @media (max-width: vars.$mediaSmallTablet) {
         flex-direction: column;
@@ -173,6 +181,28 @@
     }
 }
 
+.hero__title-arrow {
+    @supports not (aspect-ratio: 16 / 10) {
+        max-height: 55px;
+    }
+    max-width: 16%;
+    aspect-ratio: 16 / 10;
+    vertical-align: middle;
+
+    @media (max-width: vars.$mediaTablet) {
+        display: none;
+    }
+}
+
+.hero__title-lightning {
+    @supports not (aspect-ratio: 4 / 7) {
+        max-height: 84px;
+    }
+    max-width: 9%;
+    aspect-ratio: 4 / 7;
+    vertical-align: text-bottom;
+}
+
 .hero__descr {
     max-width: 410px;
     line-height: 1.5;
@@ -225,6 +255,7 @@
     border-radius: 23px;
     position: relative;
     box-shadow: 0px 4px 29px rgba(255, 78, 21, 0.1);
+    cursor: pointer;
 
     @media (max-width: vars.$mediaSmallTablet) {
         max-width: 272px;
@@ -240,16 +271,28 @@
         max-width: 100%;
         border-radius: 10px;
     }
+
+    &:hover {
+        .hero__play {
+            transform: scale(1.1);
+        }
+
+        .hero__jpg {
+            filter: blur(2.4px);
+        }
+    }
 }
 
 .hero__jpg {
     object-fit: cover;
     width: 100%;
     aspect-ratio: 17/12;
+    transition: all vars.$basicTransTime ease-out;
 }
 
 .hero__play {
     @include mixins.position(absolute, -1, top, left, 50%, 50%);
+    transition: all vars.$basicTransTime ease-out;
     translate: -50% -50%;
     width: 55%;
     aspect-ratio: 1;
