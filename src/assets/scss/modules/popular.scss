@@ -1,0 +1,63 @@
+@use "../utils/vars";
+@use "../utils/mixins";
+@use "../components/pizza-card";
+
+.popular {
+    padding-top: 54px;
+
+    @media (max-width: vars.$mediaMobile) {
+        padding-top: 28px;
+    }
+
+    &__container {
+        background: url("../assets/img/bg-menu.png") left 320px / 467px 230px
+            no-repeat;
+
+        @media (max-width: vars.$mediaTablet) {
+            background: none;
+        }
+    }
+}
+
+.popular__info {
+    position: relative;
+    margin-bottom: 112px;
+
+    @media (max-width: vars.$mediaMobile) {
+        margin-bottom: 63px;
+    }
+}
+
+.popular__title {
+    @include mixins.position(absolute, -1, top, left, 50%, 50%);
+    translate: -50% -50%;
+    font-size: min(44px, 5vw);
+    color: vars.$titleTextColor;
+    font-weight: 500;
+    z-index: 1;
+    white-space: nowrap;
+
+    @media (max-width: vars.$mediaMobile) {
+        font-size: min(27px, 5vw);
+    }
+}
+
+.popular__img-wrapper {
+    width: 100%;
+    max-height: 286px;
+    overflow: hidden;
+    border-radius: 34px;
+    filter: brightness(0.4);
+
+    @media (max-width: vars.$mediaMobile) {
+        max-height: 175px;
+        border-radius: 20px;
+        filter: brightness(0.3);
+    }
+}
+
+.popular__img {
+    object-fit: cover;
+    width: 100%;
+    aspect-ratio: 48 / 11;
+}
