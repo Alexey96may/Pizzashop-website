@@ -3,6 +3,7 @@
 
 html {
     font-size: vars.$basicFontSize;
+    overflow-x: hidden;
 }
 
 body {
@@ -14,6 +15,9 @@ body {
         #170a00 69%,
         #1e0d00 100%
     );
+    background-size: 100% 100%;
+    max-width: 100%;
+    background-repeat: no-repeat;
     font-family: vars.$mainFontFamily;
     font-weight: 400;
     line-height: 1.1;

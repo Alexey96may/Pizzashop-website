@@ -275,10 +275,18 @@
     &:hover {
         .hero__play {
             transform: scale(1.1);
+
+            @media (hover: none) {
+                transform: none;
+            }
         }
 
         .hero__jpg {
             filter: blur(2.4px);
+
+            @media (hover: none) {
+                filter: blur(0px);
+            }
         }
     }
 }
@@ -305,10 +313,10 @@
 
     &::after {
         content: "";
-        @include mixins.position(absolute, -1, bottom, right, -150px, -240px);
+        @include mixins.position(absolute, -1, bottom, right, -100px, -180px);
         background: url("../assets/img/hero-bigArrow.png") 0% 0% / 100% 100%
             no-repeat;
-        width: 190px;
+        width: 140px;
         aspect-ratio: 1;
 
         @media (max-width: vars.$mediaTablet) {

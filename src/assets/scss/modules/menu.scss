@@ -1,0 +1,55 @@
+@use "../utils/vars";
+@use "../utils/mixins";
+@use "../components/pizza-bar";
+@use "../components/pizza-card";
+
+.menu {
+    padding-top: 112px;
+
+    @media (max-width: vars.$mediaMobile) {
+        padding-top: 71px;
+    }
+}
+
+.menu__container {
+    background: url("../assets/img/bg-menu.png") left 200px / 467px 230px
+        no-repeat;
+
+    @media (max-width: vars.$mediaTablet) {
+        background: none;
+    }
+}
+
+.menu__title {
+    margin-bottom: 49px;
+    font-size: 70px;
+    color: vars.$titleTextColor;
+    font-weight: 800;
+    text-align: center;
+
+    @media (max-width: vars.$mediaMobile) {
+        margin-bottom: 28px;
+        font-size: 48px;
+    }
+}
+
+.menu__wrapper {
+    .pizza-bar {
+        margin-bottom: 111px;
+
+        @media (max-width: vars.$mediaMobile) {
+            margin-bottom: 63px;
+        }
+    }
+}
+
+.pizza-cards {
+    @include mixins.flex(center, flex-start, row, wrap);
+    column-gap: 22px;
+    row-gap: 78px;
+
+    @media (max-width: vars.$mediaMobile) {
+        column-gap: 14px;
+        row-gap: 63px;
+    }
+}
