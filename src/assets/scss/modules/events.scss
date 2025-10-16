@@ -1,0 +1,127 @@
+@use "../utils/vars";
+@use "../utils/mixins";
+
+.events {
+    padding-top: 75px;
+
+    @media (max-width: vars.$mediaMobile) {
+        padding-top: 56px;
+    }
+}
+
+.events__info {
+    order: 3;
+    align-self: self-end;
+    grid-column: span 2;
+
+    @media (max-width: vars.$mediaMobile) {
+        order: 0;
+        grid-column: span 6;
+    }
+}
+
+.events__title {
+    font-size: 69px;
+    color: vars.$titleTextColor;
+    font-weight: 800;
+    text-align: end;
+    margin-bottom: 6px;
+
+    @media (max-width: vars.$mediaMobile) {
+        font-size: 48px;
+    }
+}
+
+.events__descr {
+    font-size: 20px;
+
+    @media (max-width: vars.$mediaMobile) {
+        font-size: 14px;
+    }
+}
+
+.events__cards {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 23px;
+
+    @media (max-width: vars.$mediaMobile) {
+        gap: 15px;
+    }
+}
+
+.events__card {
+    position: relative;
+    grid-column: span 2;
+    height: 260px;
+    border-radius: 30px;
+    overflow: hidden;
+
+    @media (max-width: vars.$mediaMobile) {
+        height: 162px;
+        border-radius: 18px;
+    }
+
+    &:nth-child(1n + 4) {
+        order: 4;
+    }
+
+    &:nth-child(4) {
+        grid-column: span 3;
+    }
+
+    &:nth-child(5) {
+        grid-column: span 3;
+    }
+}
+
+.events__card-jpg {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    filter: brightness(0.4);
+}
+
+.events__card-info {
+    @include mixins.flex(space-between, flex-start, column);
+    @include mixins.position(absolute, -1, top, left, 50%, 24px);
+    translate: 0 -25%;
+    height: 140px;
+    max-width: 200px;
+
+    @media (max-width: vars.$mediaMobile) {
+        left: 16px;
+        height: 88px;
+        max-width: 130px;
+    }
+}
+
+.events__card-title {
+    font-size: 25px;
+    max-height: 83px;
+    overflow: hidden;
+    color: vars.$titleTextColor;
+    font-weight: 500;
+    text-transform: uppercase;
+
+    @media (max-width: vars.$mediaMobile) {
+        font-size: 15px;
+        max-height: 52px;
+    }
+}
+
+.events__card-button {
+    width: 100%;
+    min-width: 130px;
+    font-size: 15px;
+    color: vars.$titleTextColor;
+    font-weight: 500;
+    padding: 10px 0;
+    border: none;
+
+    @media (max-width: vars.$mediaMobile) {
+        font-size: 9px;
+        min-width: 70px;
+        padding: 6px 0;
+    }
+}
