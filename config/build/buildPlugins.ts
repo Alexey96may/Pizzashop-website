@@ -26,6 +26,7 @@ export function buildPlugins({
             __PLATFORM__: JSON.stringify(platform),
             __ENV__: JSON.stringify(mode),
         }),
+
         new SVGSpritemapPlugin("src/assets/**/*.svg", {
             output: {
                 filename: "/assets/sprites/spritemap.svg",

@@ -18,6 +18,7 @@
         "@types/node": "latest",
         "@types/webpack": "latest",
         "@types/webpack-bundle-analyzer": "latest",
+        "clean-webpack-plugin": "^4.0.0",
         "copy-webpack-plugin": "latest",
         "css-loader": "latest",
         "css-minimizer-webpack-plugin": "latest",

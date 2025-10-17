@@ -2,10 +2,18 @@
 @use "../utils/mixins";
 
 .events {
-    padding-top: 75px;
-
     @media (max-width: vars.$mediaMobile) {
         padding-top: 56px;
+    }
+
+    .container {
+        padding-top: 75px;
+        background: url("../assets/img/bg-events.png") left top / 467px 230px
+            no-repeat;
+
+        @media (max-width: vars.$mediaTablet) {
+            background: none;
+        }
     }
 }
 
@@ -14,7 +22,8 @@
     align-self: self-end;
     grid-column: span 2;
 
-    @media (max-width: vars.$mediaMobile) {
+    @media (max-width: vars.$mediaSmallTablet) {
+        max-width: calc(100vw - (vars.$mainPadding * 2));
         order: 0;
         grid-column: span 6;
     }
@@ -45,7 +54,9 @@
     grid-template-columns: repeat(6, 1fr);
     gap: 23px;
 
-    @media (max-width: vars.$mediaMobile) {
+    @media (max-width: vars.$mediaSmallTablet) {
+        overflow-x: auto;
+        grid-template-columns: repeat(6, 114px);
         gap: 15px;
     }
 }
@@ -56,6 +67,11 @@
     height: 260px;
     border-radius: 30px;
     overflow: hidden;
+
+    @media (max-width: vars.$mediaSmallTablet) {
+        height: 200px;
+        border-radius: 24px;
+    }
 
     @media (max-width: vars.$mediaMobile) {
         height: 162px;
@@ -89,6 +105,12 @@
     height: 140px;
     max-width: 200px;
 
+    @media (max-width: vars.$mediaSmallTablet) {
+        left: 18px;
+        height: 110px;
+        max-width: 150px;
+    }
+
     @media (max-width: vars.$mediaMobile) {
         left: 16px;
         height: 88px;
@@ -103,6 +125,11 @@
     color: vars.$titleTextColor;
     font-weight: 500;
     text-transform: uppercase;
+
+    @media (max-width: vars.$mediaSmallTablet) {
+        font-size: 18px;
+        max-height: 75px;
+    }
 
     @media (max-width: vars.$mediaMobile) {
         font-size: 15px;
