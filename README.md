@@ -2,7 +2,7 @@
 
 **A website** for selling pizza. **The design** is from Internet.
 
-<!-- [Presentation](https://alexey96may.github.io/Pizzashop-website/build/) -->
+[Presentation](https://alexey96may.github.io/Pizzashop-website/build/)
 
 ## Original Design Layout
 
