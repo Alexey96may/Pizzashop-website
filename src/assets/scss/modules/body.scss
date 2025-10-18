@@ -4,6 +4,7 @@
 html {
     font-size: vars.$basicFontSize;
     overflow-x: hidden;
+    overflow-y: auto;
 }
 
 body {
@@ -17,6 +18,8 @@ body {
     );
     background-size: 100% 100%;
     max-width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
     background-repeat: no-repeat;
     font-family: vars.$mainFontFamily;
     font-weight: 400;

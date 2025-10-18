@@ -35,6 +35,7 @@
 
 .nav {
     transition: all vars.$basicTransTime ease-in-out;
+    z-index: 2;
 
     @media (max-width: vars.$mediaTablet) {
         visibility: hidden;
@@ -215,6 +216,7 @@
     border: none;
     width: 28px;
     height: 21px;
+    z-index: 3;
 
     @media (max-width: vars.$mediaTablet) {
         display: block;
