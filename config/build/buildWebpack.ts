@@ -24,8 +24,8 @@ export function buildWebpack(options: BuildOptions): webpack.Configuration {
             rules: buildLoaders(options),
         },
         performance: {
-            maxEntrypointSize: 712000,
-            maxAssetSize: 712000,
+            maxEntrypointSize: 3712000,
+            maxAssetSize: 3712000,
         },
         resolve: buildResolvers(options),
         devtool: isDev ? "eval-cheap-module-source-map" : "source-map",
