@@ -5,7 +5,7 @@
     @include mixins.flex(space-between, center, column);
     row-gap: 20px;
     border-radius: 30px;
-    background-color: #210a01;
+    background-color: #270c02;
     width: 297px;
     padding: 0 41px 23px 27px;
 
@@ -69,9 +69,9 @@
         height: 100%;
         background: linear-gradient(
             to bottom,
-            rgba(33, 10, 1, 0) 50%,
-            rgba(33, 10, 1, 0.5) 50%,
-            rgba(33, 10, 1, 0.7) 100%
+            rgba(39, 12, 2, 0) 50%,
+            rgba(39, 12, 2, 0.5) 50%,
+            rgba(39, 12, 2, 0.7) 100%
         );
         pointer-events: none;
     }
