@@ -53,9 +53,9 @@ export function buildPlugins({
     }
 
     if (!isDev) {
-        plugins.push(new new ImageminWebpWebpackPlugin()());
+        plugins.push(new ImageminWebpWebpackPlugin());
         plugins.push(
-            new new ImageminAvifWebpackPlugin({
+            new ImageminAvifWebpackPlugin({
                 config: [
                     {
                         test: /\.(jpe?g|png)/,
@@ -68,7 +68,7 @@ export function buildPlugins({
                 detailedLogs: true,
                 silent: false,
                 strict: false,
-            })()
+            })
         );
     }
 

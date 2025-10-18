@@ -32,6 +32,26 @@
     }
 }
 
+.webp .hero__container {
+    background: url("../assets/img/bg-pizza.webp") 15% top / 518px 230px
+            no-repeat,
+        url("../assets/img/bg-pizza.webp") 75% bottom / 518px 230px no-repeat;
+
+    @media (max-width: vars.$mediaTablet) {
+        background: none;
+    }
+}
+
+.avif .hero__container {
+    background: url("../assets/img/bg-pizza.avif") 15% top / 518px 230px
+            no-repeat,
+        url("../assets/img/bg-pizza.avif") 75% bottom / 518px 230px no-repeat;
+
+    @media (max-width: vars.$mediaTablet) {
+        background: none;
+    }
+}
+
 .hero__images-wrapper {
     position: relative;
 
@@ -331,6 +351,28 @@
 
     @media (max-width: vars.$mediaMobile) {
         font-size: 16px;
+    }
+}
+
+.webp .hero__buttons {
+    &::after {
+        background: url("../assets/img/hero-bigArrow.webp") 0% 0% / 100% 100%
+            no-repeat;
+
+        @media (max-width: vars.$mediaTablet) {
+            display: none;
+        }
+    }
+}
+
+.avif .hero__buttons {
+    &::after {
+        background: url("../assets/img/hero-bigArrow.avif") 0% 0% / 100% 100%
+            no-repeat;
+
+        @media (max-width: vars.$mediaTablet) {
+            display: none;
+        }
     }
 }
 

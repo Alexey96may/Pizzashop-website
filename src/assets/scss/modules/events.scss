@@ -17,6 +17,28 @@
     }
 }
 
+.webp .events {
+    .container {
+        background: url("../assets/img/bg-events.webp") left top / 467px 230px
+            no-repeat;
+
+        @media (max-width: vars.$mediaTablet) {
+            background: none;
+        }
+    }
+}
+
+.avif .events {
+    .container {
+        background: url("../assets/img/bg-events.avif") left top / 467px 230px
+            no-repeat;
+
+        @media (max-width: vars.$mediaTablet) {
+            background: none;
+        }
+    }
+}
+
 .events__info {
     order: 3;
     align-self: self-end;

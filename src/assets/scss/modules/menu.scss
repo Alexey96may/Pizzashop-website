@@ -20,6 +20,24 @@
     }
 }
 
+.webp .menu__container {
+    background: url("../assets/img/bg-menu.webp") left 200px / 467px 230px
+        no-repeat;
+
+    @media (max-width: vars.$mediaTablet) {
+        background: none;
+    }
+}
+
+.avif .menu__container {
+    background: url("../assets/img/bg-menu.avif") left 200px / 467px 230px
+        no-repeat;
+
+    @media (max-width: vars.$mediaTablet) {
+        background: none;
+    }
+}
+
 .menu__title {
     margin-bottom: 49px;
     font-size: 70px;
