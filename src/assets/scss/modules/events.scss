@@ -2,14 +2,14 @@
 @use "../utils/mixins";
 
 .events {
-    @media (max-width: vars.$mediaMobile) {
-        padding-top: 56px;
-    }
-
     .container {
         padding-top: 75px;
         background: url("../assets/img/bg-events.png") left top / 467px 230px
             no-repeat;
+
+        @media (max-width: vars.$mediaMobile) {
+            padding-top: 56px;
+        }
 
         @media (max-width: vars.$mediaTablet) {
             background: none;
