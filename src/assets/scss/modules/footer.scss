@@ -1,37 +1,184 @@
 @use "../utils/vars";
 @use "../utils/mixins";
 
-.header {
+.footer {
+    padding: 70px 0 63px;
+    background: linear-gradient(
+        225deg,
+        #170a00 0%,
+        #170600 31%,
+        #0f0700 69%,
+        #170a00 100%
+    );
 }
-.container {
+
+.footer__links {
+    @include mixins.flex(flex-start, baseline, row, wrap);
+    gap: 84px;
+    margin-bottom: 97px;
+
+    @media (max-width: vars.$mediaMobile) {
+        gap: 58px;
+        margin-bottom: 58px;
+    }
 }
-.header__container {
-}
+
 .logo {
+    a {
+        font-size: 30px;
+        font-weight: 800;
+
+        @media (max-width: vars.$mediaMobile) {
+            font-size: 24px;
+        }
+    }
 }
-.nav {
+
+.footer__nav {
+    @include mixins.flex(flex-start, flex-start, row, wrap);
+    gap: 84px;
+
+    @media (max-width: vars.$mediaMobile) {
+        gap: 30px;
+    }
+
+    @media (max-width: vars.$mediaSmallMobile) {
+        gap: 28px;
+    }
+
+    li:first-child {
+        margin-bottom: 8px;
+
+        @media (max-width: vars.$mediaMobile) {
+            margin-bottom: 4px;
+        }
+
+        a {
+            color: vars.$titleTextColor;
+        }
+    }
 }
-.nav__list {
+
+.footer-link {
+    font-size: 18px;
+    line-height: 1.25;
+    letter-spacing: 0.02em;
+    transition: all vars.$basicTransTime ease;
+
+    &:hover,
+    &:focus-visible {
+        color: vars.$titleTextColor;
+
+        @media (hover: none) {
+            color: inherit;
+        }
+    }
+
+    @media (max-width: vars.$mediaMobile) {
+        font-size: 14px;
+    }
 }
-.nav__item {
+
+.footer__link-list {
+    @include mixins.flex(flex-start, flex-start, column);
+    min-width: 170px;
+    gap: 14px;
+
+    @media (max-width: vars.$mediaMobile) {
+        min-width: 135px;
+        gap: 11px;
+    }
+
+    @media (max-width: vars.$mediaSmallMobile) {
+        min-width: auto;
+        gap: 10px;
+    }
 }
-.nav__link {
+
+.footer__contacts {
+    @include mixins.flex(space-between, center, row, wrap);
+    gap: vars.$minGap;
 }
-.nav__link--active {
+
+.footer__phone {
+    font-size: 20px;
+    line-height: 1.25;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    @include mixins.textGrad(72deg, #ffa228 0%, #ff6432 100%);
+
+    @media (max-width: vars.$mediaMobile) {
+        font-size: 15px;
+    }
 }
-.nav__item--reg {
+
+.footer__socials {
+    @include mixins.flex(space-between, center);
+    gap: 12px;
+
+    @media (max-width: vars.$mediaMobile) {
+        gap: 4px;
+    }
+
+    a {
+        line-height: 1;
+    }
+
+    svg {
+        display: inline-block;
+        width: 29px;
+        height: 29px;
+        background: none;
+        transition: all vars.$basicTransTime ease;
+
+        @media (max-width: vars.$mediaMobile) {
+            width: 24px;
+            height: 24px;
+        }
+
+        &:hover,
+        &:focus-visible {
+            transform: scale(1.1);
+
+            @media (hover: none) {
+                transform: none;
+            }
+        }
+    }
 }
-.header__buttons {
+
+.footer__inst {
+    svg {
+        width: 29px;
+        height: 29px;
+
+        @media (max-width: vars.$mediaMobile) {
+            width: 19px;
+            height: 19px;
+        }
+    }
 }
-.button {
+
+.footer__x {
+    svg {
+        width: 29px;
+        height: 24px;
+
+        @media (max-width: vars.$mediaMobile) {
+            width: 24px;
+            height: 24px;
+        }
+    }
 }
-.button--login {
-}
-.button--cart {
-}
-.button__svg {
-}
-.burger {
-}
-.burger__line {
+
+.footer__fb {
+    svg {
+        width: 27px;
+        height: 27px;
+
+        @media (max-width: vars.$mediaMobile) {
+            width: 20px;
+            height: 20px;
+        }
+    }
 }
